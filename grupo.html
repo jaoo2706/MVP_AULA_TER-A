@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Grupo - Futebol</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    header a {
+      text-decoration: none;
+      color: #333;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .chat, .evento {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .chat-box {
+      background: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      text-align: left;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    .evento button {
+      margin-top: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    .confirmar {
+      background-color: #4CAF50;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .confirmar:hover {
+      background-color: #45a049;
+    }
+    .nao-confirmar {
+      background-color: #e53935;
+      color: white;
+    }
+    .nao-confirmar:hover {
+      background-color: #d32f2f;
+    }
+    .mensagem-status {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #4CAF50;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="home.html">← Voltar</a>
+    <h2>⚽ Futebol Society</h2>
+  </header>
+
+  <main>
+    <section class="chat">
+      <h3>Chat</h3>
+      <div class="chat-box">
+        <p><strong>Ana:</strong> Vai ter jogo esse sábado?</p>
+        <p><strong>Pedro:</strong> Confirmado! 15h no campo 3.</p>
+      </div>
+      <input type="text" placeholder="Escreva sua mensagem...">
+    </section>
+
+    <section class="evento">
+      <h3>🏟️ Próximo Encontro</h3>
+      <p><strong>Data:</strong> Sábado, 20/04 às 15h</p>
+      <p><strong>Local:</strong> Arena da Cidade - Campo 3</p>
+
+      <ul id="listaParticipantes">
+        <li>✔️ Ana</li>
+        <li>✔️ Pedro</li>
+        <li id="seuStatus">❌ Você (não confirmado)</li>
+      </ul>
+
+      <button class="confirmar" onclick="confirmarPresenca()">Confirmar presença</button>
+      <button class="nao-confirmar" onclick="naoComparecer()">Não vou comparecer</button>
+
+      <div id="mensagemStatus" class="mensagem-status"></div>
+    </section>
+  </main>
+
+  <script>
+    function confirmarPresenca() {
+      document.getElementById('seuStatus').innerHTML = '✔️ Você (confirmado)';
+      const mensagem = document.getElementById('mensagemStatus');
+      mensagem.style.display = 'block';
+      mensagem.style.color = '#4CAF50';
+      mensagem.innerText = '✅ Presença confirmada!';
+    }
+
+    function naoComparecer() {
+      document.getElementById('seuStatus').innerHTML = '❌ Você (não vai comparecer)';
+      const mensagem = document.getElementById('mensagemStatus');
+      mensagem.style.display = 'block';
+      mensagem.style.color = '#e53935';
+      mensagem.innerText = '❌ Você indicou que não vai comparecer.';
+    }
+  </script>
+</body>
+</html>

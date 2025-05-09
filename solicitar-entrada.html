@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitar Entrada - Grupo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="explorar.html">← Voltar</a>
+    <h2>🚴‍♀️ Ciclismo Curitiba</h2>
+  </header>
+
+  <main>
+    <section class="group-info">
+      <h3>Sobre o grupo</h3>
+      <p>Pedaladas em grupo aos sábados, segurança, socialização e muita energia positiva! 👊</p>
+    </section>
+
+    <section class="solicitar">
+      <h3>Mensagem de solicitação de entrada</h3>
+      <form onsubmit="handleSolicitacao(event)">
+        <textarea required placeholder="Fale um pouco sobre você, suas experiências com o esporte ou por que quer entrar nesse grupo..."></textarea>
+        <button type="submit">📨 Solicitar Entrada</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    function handleSolicitacao(event) {
+      event.preventDefault();
+      // Pequeno delay para dar sensação de "enviado"
+      setTimeout(() => {
+        window.location.href = "verificar-solicitacoes.html";
+      }, 500); // meio segundo de delay para parecer natural
+    }
+  </script>
+</body>
+</html>

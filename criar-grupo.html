@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Grupo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: none;
+      min-height: 100px;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: -10px;
+      margin-top: 10px;
+      color: #555;
+    }
+    button {
+      padding: 12px;
+      background-color: #FFB347;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #FFA726;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="home.html" class="back-button">← Voltar</a>
+
+    <h1>Novo Grupo</h1>
+
+    <form action="grupo_novo.html">
+      <input type="text" placeholder="Nome do grupo" required>
+      <textarea placeholder="Descrição do grupo" rows="4"></textarea>
+
+      <label>Selecione o esporte:</label>
+      <select required>
+        <option value="" disabled selected>Escolha o esporte</option>
+        <option>Futebol</option>
+        <option>Basquete</option>
+        <option>Corrida</option>
+        <option>Vôlei</option>
+      </select>
+
+      <button type="submit">Criar</button>
+    </form>
+  </div>
+</body>
+</html>

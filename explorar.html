@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Explorar Grupos - HobbyConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2>Explorar Grupos</h2>
+    <nav><a href="home.html" class="back-button">← Voltar</a></nav>
+  </header>
+
+  <main>
+    <div class="search-bar">
+      <input type="text" placeholder="🔎 Pesquise por grupos de esportes...">
+    </div>
+
+    <div class="group-list">
+        <a href="solicitar-entrada.html" class="group-card">
+        <h4>🏐 Vôlei de Praia</h4>
+        <p>Grupo aberto para partidas aos domingos na areia.</p>
+      </a>
+      <a href="solicitar-entrada.html" class="group-card">
+        <h4>🏃‍♂️ Corrida de Rua</h4>
+        <p>Encontros semanais para treinos e provas de corrida.</p>
+      </a>
+      <a href="solicitar-entrada.html" class="group-card">
+        <h4>🚴‍♀️ Ciclismo Curitiba</h4>
+        <p>Pedaladas em grupo, segurança e trilhas urbanas.</p>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    const searchInput = document.querySelector('.search-bar input');
+    const cards = document.querySelectorAll('.group-card');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.hidden = !text.includes(query);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Suporte</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: #333;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: none;
+      min-height: 150px;
+    }
+    button:hover {
+      background-color: #c38836
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="configuracoes.html" class="back-button">← Voltar</a>
+
+    <h1>Central de Ajuda</h1>
+    <p>Preencha o formulário abaixo para falar com a nossa equipe.</p>
+
+    <form onsubmit="enviarMensagem(event)">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="tel" name="telefone" placeholder="Telefone para contato" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <input type="text" name="titulo" placeholder="Título da dúvida" required>
+      <textarea name="mensagem" placeholder="Descreva sua dúvida ou problema..." required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </div>
+
+  <script>
+    function enviarMensagem(event) {
+      event.preventDefault(); // evita recarregar a página
+      alert('Mensagem enviada com sucesso! Em breve nossa equipe entrará em contato.');
+      // Aqui poderia limpar o formulário também, se quiser:
+      // event.target.reset();
+    }
+  </script>
+</body>
+</html>

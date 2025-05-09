@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Aceitar Participantes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .user-list {
+      list-style: none;
+      padding: 0;
+    }
+    .user-list li {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .user-list button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .aceitar {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .aceitar:hover {
+      background-color: #45a049;
+    }
+    .recusar {
+      background-color: #e53935;
+      color: white;
+    }
+    .recusar:hover {
+      background-color: #d32f2f;
+    }
+    .status {
+      margin-top: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="grupo_novo.html">← Voltar</a>
+    <h1>Aceitar Participantes</h1>
+
+    <ul class="user-list">
+      <li id="maria">
+        <strong>Maria</strong>
+        <p>Mensagem: "Oi! Gostaria muito de participar do grupo!"</p>
+        <div class="actions">
+          <button class="aceitar" onclick="responderPedido('maria', true)">Aceitar</button>
+          <button class="recusar" onclick="responderPedido('maria', false)">Recusar</button>
+        </div>
+        <div class="status" id="status-maria"></div>
+      </li>
+
+      <li id="gustavo">
+        <strong>Gustavo</strong>
+        <p>Mensagem: "Sou novo na cidade e queria jogar com vocês."</p>
+        <div class="actions">
+          <button class="aceitar" onclick="responderPedido('gustavo', true)">Aceitar</button>
+          <button class="recusar" onclick="responderPedido('gustavo', false)">Recusar</button>
+        </div>
+        <div class="status" id="status-gustavo"></div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    function responderPedido(id, aceitou) {
+      const status = document.getElementById('status-' + id);
+      if (aceitou) {
+        alert("Participante aceito!");
+        status.textContent = "✅ Aceito";
+        status.style.color = "#4CAF50";
+      } else {
+        alert("Participante recusado!");
+        status.textContent = "❌ Recusado";
+        status.style.color = "#e53935";
+      }
+      document.querySelector('#' + id + ' .actions').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
